@@ -50,7 +50,54 @@ Page 127 of the text: *Casting between char and Numeric Types*
 
 ## Java Code
 
+``` java
+public class Listing_4_16 {
+	public static void main(String[] args) {
+		// Call a method to generate a random number in the range of a character.
+		int randomUpperCaseLetterNumber = makeRandomUpperLetter();
+
+		// Note that (char) in front of our variable recasts it as 
+		System.out.println("The random upper case letter of the day is: " + (char)randomUpperCaseLetterNumber);
+	}
+	public static int makeRandomUpperLetter(){
+		// Range of Character values, page 125, table 4.4
+		//Characters ('A' to 'Z'), Code Value in Decimal (65 to 90)
+		
+		// How to use a random number Page 122, bottom of the page, 4.2.5 The random Method
+		// Also use the example on page 87.
+		
+		int lowerLimit = 65;
+		int upperLimit = 90;
+		int Range = upperLimit-lowerLimit + 1;
+		int randomUpperCaseLetterNumber = lowerLimit + (int)(Math.random()*Range);
+		System.out.println(randomUpperCaseLetterNumber);
+		return randomUpperCaseLetterNumber;
+	}
+}
+```
+
 ## Console Output
+
+I tested several cases to verify that my random number range would cover the range of all possible upper case letters.
+
+```
+
+65
+The random upper case letter of the day is: A
+
+69
+The random upper case letter of the day is: E
+
+
+80
+The random upper case letter of the day is: P
+
+81
+The random upper case letter of the day is: Q
+
+90
+The random upper case letter of the day is: Z
+```
 
 ## Command Prompt History
 
@@ -156,6 +203,121 @@ J:\COMSC_1033_Workspace\Listing_4_16_project>
 
 ### Merge my test branch back into my dev branch
 Now that I have code written that works, I want to merge my test branch into my dev branch.
+
+1. See what branches are availible.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git branch
+  dev
+  master
+* test
+```
+
+2. try to checkout my next branch.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git checkout dev
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+```
+It stoped me because I did not add in my files.
+I saved all my files, then added things in, commited, and pushed.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git add .
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>git commit -m "Updating readme.md file."
+[test eb614a6] Updating readme.md file.
+ 3 files changed, 40 insertions(+), 8 deletions(-)
+ rewrite bin/Listing_4_16.class (77%)
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': jeremy.evert@swosu.edu
+Password for 'https://jeremy.evert@swosu.edu@github.com':
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 1.98 KiB | 0 bytes/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+To https://github.com/jeremy-evert/Listing_4_16_project.git
+   04a77c9..eb614a6  test -> test
+```
+Now we see which branches we have again.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git branch
+  dev
+  master
+* test
+```
+We checkout the branch we want to be on.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git checkout dev
+Switched to branch 'dev'
+Your branch is up-to-date with 'origin/dev'.
+```
+3. We merge in the changes.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git merge test
+Updating a1c2d56..eb614a6
+Fast-forward
+ README.md              | 113 +++++++++++++++++++++++++++++++++++++++++++++++++
+ bin/Listing_4_16.class | Bin 379 -> 1041 bytes
+ src/Listing_4_16.java  |  33 ++++++++++++---
+ 3 files changed, 139 insertions(+), 7 deletions(-)
+```
+4. We push these changes to the remote.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': jeremy.evert@swosu.edu
+Password for 'https://jeremy.evert@swosu.edu@github.com':
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/jeremy-evert/Listing_4_16_project.git
+   a1c2d56..eb614a6  dev -> dev
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>
+```
+Sweet success. But lets tidy these up a little bit first.
 
 ## Report Summary
 
