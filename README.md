@@ -318,6 +318,83 @@ To https://github.com/jeremy-evert/Listing_4_16_project.git
 J:\COMSC_1033_Workspace\Listing_4_16_project>
 ```
 Sweet success. But lets tidy these up a little bit first.
+...
+Now that my code is tidy and my readme file is updated, lets push everything up.
+
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git add .
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>git commit -m "Tidy up code and update readme file."
+[dev 69c4a98] Tidy up code and update readme file.
+ 3 files changed, 167 insertions(+), 13 deletions(-)
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+```
+In the process I fat fingered a push password.
+```
+Username for 'https://github.com': jeremy.evert@swosu.edu
+Password for 'https://jeremy.evert@swu@github.com':
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/jeremy-evert/Listing_4_16_project.git/'
+```
+try again.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': jeremy.evert@swosu.edu
+Password for 'https://jeremy.evert@swosu.edu@github.com':
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 2.44 KiB | 0 bytes/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+To https://github.com/jeremy-evert/Listing_4_16_project.git
+   eb614a6..69c4a98  dev -> dev
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>
+```
+and now we are ready to update the master branch (and update the test branch as well.)
+
 
 ## Report Summary
 
