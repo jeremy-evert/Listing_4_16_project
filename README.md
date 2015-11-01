@@ -395,6 +395,111 @@ J:\COMSC_1033_Workspace\Listing_4_16_project>
 ```
 and now we are ready to update the master branch (and update the test branch as well.)
 
+### update other branchs.
+1. See what branches are availible.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git branch
+* dev
+  master
+  test
+```
+2. Checkout the test branch before the update.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git checkout test
+Switched to branch 'test'
+Your branch is up-to-date with 'origin/test'.
+```
+3. update the test branch by merging in the dev branch. notice the fast-forward updating.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git merge dev
+Updating eb614a6..c7cb510
+Fast-forward
+ README.md              | 239 +++++++++++++++++++++++++++++++++++++++++++++++++
+ bin/Listing_4_16.class | Bin 1041 -> 1043 bytes
+ src/Listing_4_16.java  |  18 ++--
+ 3 files changed, 244 insertions(+), 13 deletions(-)
+```
+4. Push the changes up to the remote.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': jeremy.evert@swosu.edu
+Password for 'https://jeremy.evert@swosu.edu@github.com':
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/jeremy-evert/Listing_4_16_project.git
+   eb614a6..c7cb510  test -> test
+```
+Now rinse and repeat for the master branch.
+```
+J:\COMSC_1033_Workspace\Listing_4_16_project>git branch
+  dev
+  master
+* test
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>git merge dev
+Updating a1c2d56..c7cb510
+Fast-forward
+ README.md              | 352 +++++++++++++++++++++++++++++++++++++++++++++++++
+ bin/Listing_4_16.class | Bin 379 -> 1043 bytes
+ src/Listing_4_16.java  |  25 +++-
+ 3 files changed, 370 insertions(+), 7 deletions(-)
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': jeremy.evert@swosu.edu
+Password for 'https://jeremy.evert@swosu.edu@github.com':
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/jeremy-evert/Listing_4_16_project.git
+   a1c2d56..c7cb510  master -> master
+
+J:\COMSC_1033_Workspace\Listing_4_16_project>
+```
+
 
 ## Report Summary
+This project shows how to do branch merging inside Git and at the same time how to generate a random character that ranges from 'A' to 'Z'. This code uses a method call.
 
