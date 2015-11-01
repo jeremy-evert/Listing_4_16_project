@@ -12,6 +12,11 @@ We want to write a program that displays a random uppercase letter using the Mat
 1. Set up a new Java project called Listing_4_16_Project
 2. Set up a git repository, and go to the test branch.
 3. Play around with some code using methods to get something that works.
+``` java
+	// Call a method to generate a random number in the range of a character.
+	// Make the number into a char
+	// print the number
+```
 4. Merge working code into the Dev branch.
 5. Tidy up the read me file
 
@@ -20,7 +25,12 @@ We want to write a program that displays a random uppercase letter using the Mat
 Math.random()
 ```
 Page 87 of the text: *Generating Random Numbers*
+Page 87 has a good example of how to use the random. The thing to remember is that you must keep the method call inside the parentases with the multiplider such as (Math.random() * 10).
 Page 122 of the text: *4.2.5 The random Method*
+```java
+a + (int)Math.random()*b
+```
+Returns a random number between *a* and *a+b* excluding *a+b*.
 http://stackoverflow.com/questions/7961788/math-random-explained
 http://examples.javacodegeeks.com/core-java/math/java-math-random-example/
 http://www.tutorialspoint.com/java/lang/math_random.htm
@@ -142,7 +152,10 @@ Branch test set up to track remote branch test from origin.
 J:\COMSC_1033_Workspace\Listing_4_16_project>
 ```
 
-Now we go make some sweet code.
+12. Now we go make some sweet code.
+
+### Merge my test branch back into my dev branch
+Now that I have code written that works, I want to merge my test branch into my dev branch.
 
 ## Report Summary
 
