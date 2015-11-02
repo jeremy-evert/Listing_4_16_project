@@ -20,4 +20,17 @@ public class Listing_4_16 {
 		System.out.println(randomUpperCaseLetterNumber);
 		return randomUpperCaseLetterNumber;
 	}
+	
+	public static void testMakeRandomUpperLetter(){
+		// try to test the code I wrote.
+		char startingLetter = 'A';
+		char endingLetter = 'Z';
+		int 
+		
+		for start with A go to Z
+		
+		while the letter has not poppued up.
+		
+		Call makeRandomUpperLetter
+	}
 }
