@@ -23,8 +23,8 @@ public class Listing_4_16 {
 	}
 	
 	public static void testMakeRandomUpperLetter(){
-		char startingLetter = 'A'; // Where we start our testing cases.
-		char endingLetter   = 'Z'; // Where we end our testing cases.
+		//char startingLetter = 'A'; // Where we start our testing cases.
+		//char endingLetter   = 'Z'; // Where we end our testing cases.
 		System.out.println("Begin the search."); // notes inside our testing console output.
 		for (int letterIndex = 65; letterIndex<= 90; letterIndex++){
 			System.out.println("The current letter we are searching for is: " + (char)letterIndex);
