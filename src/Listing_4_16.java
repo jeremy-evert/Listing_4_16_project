@@ -17,7 +17,7 @@ public class Listing_4_16 {
 		int upperLimit = 90;
 		int Range = upperLimit-lowerLimit + 1;
 		int randomUpperCaseLetterNumber = lowerLimit + (int)(Math.random()*Range);
-		System.out.println(randomUpperCaseLetterNumber);
+		//System.out.println(randomUpperCaseLetterNumber);
 		return randomUpperCaseLetterNumber;
 	}
 }
